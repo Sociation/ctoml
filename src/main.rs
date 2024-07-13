@@ -6,7 +6,7 @@ use toml::Value;
 mod operations;
 
 fn print_usage() {
-    eprintln!("Usage: toml [OPTION] PATH KEY [VALUE]");
+    eprintln!("Usage: ctoml [OPTION] PATH KEY [VALUE]");
     eprintln!("Manipulate TOML files from the command line.");
     eprintln!();
     eprintln!("Options:");
@@ -18,10 +18,10 @@ fn print_usage() {
     eprintln!("  VALUE           Value to write (required for write operations)");
     eprintln!();
     eprintln!("Examples:");
-    eprintln!("  toml config.toml app.name");
-    eprintln!("  toml config.toml app.version 1.0.0");
-    eprintln!("  toml config.toml database.ports[] 5432");
-    eprintln!("  toml -r config.toml app.deprecated_field");
+    eprintln!("  ctoml config.toml app.name");
+    eprintln!("  ctoml config.toml app.version 1.0.0");
+    eprintln!("  ctoml config.toml database.ports[] 5432");
+    eprintln!("  ctoml -r config.toml app.deprecated_field");
     eprintln!();
     eprintln!("For more information, visit: https://github.com/sociation/ctoml");
 }

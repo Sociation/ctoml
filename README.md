@@ -37,13 +37,13 @@ cargo install ctoml
 The general syntax for using the TOML CLI Editor is:
 
 ```bash
-toml <file> <key> [value]
+ctoml <file> <key> [value]
 ```
 
 For removing values:
 
 ```bash
-toml -r <file> <key>
+ctoml -r <file> <key>
 ```
 
 Where:
@@ -56,7 +56,7 @@ Where:
 To read a value from the TOML file:
 
 ```bash
-toml <file> <key>
+ctoml <file> <key>
 ```
 
 ### Writing Values
@@ -64,7 +64,7 @@ toml <file> <key>
 To write a value to the TOML file:
 
 ```bash
-toml <file> <key> <value>
+ctoml <file> <key> <value>
 ```
 
 ### Removing Values
@@ -72,7 +72,7 @@ toml <file> <key> <value>
 To remove a value from the TOML file:
 
 ```bash
-toml -r <file> <key>
+ctoml -r <file> <key>
 ```
 
 ## Examples
@@ -105,66 +105,66 @@ sku = 284758393
 ### Reading Examples
 
 ```bash
-toml sample.toml foo.bar
+ctoml sample.toml foo.bar
 # Output: some string
 
-toml sample.toml foo.integers
+ctoml sample.toml foo.integers
 # Output: [ 1, 2, 3 ]
 
-toml sample.toml foo.integers[1]
+ctoml sample.toml foo.integers[1]
 # Output: 2
 
-toml sample.toml foo.nested_arrays_of_ints[0][0]
+ctoml sample.toml foo.nested_arrays_of_ints[0][0]
 # Output: 1
 
-toml sample.toml foo.name.first
+ctoml sample.toml foo.name.first
 # Output: Tom
 
-toml sample.toml products[1].sku
+ctoml sample.toml products[1].sku
 # Output: 284758393
 ```
 
 ### Writing Examples
 
 ```bash
-toml sample.toml foo.bar some_value
+ctoml sample.toml foo.bar some_value
 # Writes "some_value" string to foo.bar
 
-toml sample.toml foo.integers [1, 2, 3]
+ctoml sample.toml foo.integers [1, 2, 3]
 # Writes [1, 2, 3] array to foo.integers
 
-toml sample.toml foo.integers[1] 2
+ctoml sample.toml foo.integers[1] 2
 # Writes 2 to the second entry of foo.integers array
 
-toml sample.toml foo.integers[] 5
+ctoml sample.toml foo.integers[] 5
 # Adds 5 to the end of foo.integers array
 
-toml sample.toml foo.integers[] [5, 6, 8]
+ctoml sample.toml foo.integers[] [5, 6, 8]
 # Adds three elements (5, 6, 8) to the end of foo.integers array
 
-toml sample.toml products[1].name Nauk
+ctoml sample.toml products[1].name Nauk
 # Sets value "Nauk" to the second element of products array table for key name
 ```
 
 ### Removing Examples
 
 ```bash
-toml -r sample.toml foo.integers
+ctoml -r sample.toml foo.integers
 # Removes integers from foo
 
-toml -r sample.toml foo.integers[:2]
+ctoml -r sample.toml foo.integers[:2]
 # Removes the last 2 elements from foo.integers array
 
-toml -r sample.toml foo.integers[2:]
+ctoml -r sample.toml foo.integers[2:]
 # Removes the first 2 elements from foo.integers array
 
-toml -r sample.toml foo.integers[1]
+ctoml -r sample.toml foo.integers[1]
 # Removes the second element from foo.integers array
 
-toml -r sample.toml foo.integers[0,2,4]
+ctoml -r sample.toml foo.integers[0,2,4]
 # Removes elements at indices 0, 2, and 4 from foo.integers array
 
-toml -r sample.toml foo.nested_arrays_of_ints[0][:1]
+ctoml -r sample.toml foo.nested_arrays_of_ints[0][:1]
 # Removes the last element from the first nested array in foo.nested_arrays_of_ints
 ```
 
