@@ -1,4 +1,4 @@
-# CTOML Editor
+# CTOML
 
 A command-line interface tool for reading, writing, and removing values from TOML files.
 
