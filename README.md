@@ -1,6 +1,6 @@
 # CTOML
 
-A terminal tool for reading, writing, and removing values from TOML files.
+A terminal tool for reading, writing, and removing values from TOML files. 
 
 ## Table of Contents
 
@@ -21,6 +21,11 @@ A terminal tool for reading, writing, and removing values from TOML files.
 - **Remove**: Delete keys or array elements from TOML files.
 - **Support for complex data structures**: Handle nested tables, arrays, and mixed data types.
 - **Flexible syntax**: Use dot notation for nested keys and bracket notation for array indexing.
+
+## Warning
+
+It's totally unoptimized, as it was written in an evening, when I needed it, but couldn't find anything that worked like I wanted.
+I may improve and optimize it later.
 
 ## Installation
 
